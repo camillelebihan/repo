@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4NG103LKXG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4NG103LKXG');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAISE × Baby VC #14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg: #e9e9ec;
+  --card: #ffffff;
+  --inset: #f2f2f5;
+  --ink: #17171a;
+  --muted: #6b6b75;
+  --line: #e1e1e6;
+  --yellow: #f7e94b;
+  --yellow-soft: #fcf5c4;
+  --blue: #4466ee;
+  --blue-soft: #e3e9ff;
+  --orange: #fc5a1a;
+  --orange-soft: #ffe6da;
+  --green: #1f6a48;
+  --mint: #7fe2ad;
+  --berry: #560c22;
+  --pink: #f6aecb;
+  --sans: "Urbanist", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #111114; --card: #1c1c21; --inset: #26262c; --ink: #f2f2f5; --muted: #a2a2ad; --line: #303038; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #111114; --card: #1c1c21; --inset: #26262c; --ink: #f2f2f5; --muted: #a2a2ad; --line: #303038; color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 500; font-size: clamp(16px, .3vw + 14.8px, 18.5px); line-height: 1.6; overflow-wrap: break-word; -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding-inline: clamp(12px, 3vw, 32px); padding-block: clamp(14px, 3vw, 32px) 56px; display: grid; gap: clamp(10px, 1.6vw, 18px); }
+.wrap > *, .layout > *, main > * { min-width: 0; }
+
+/* ---------- type ---------- */
+.mono { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+h1, h2 { font-family: var(--sans); font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: -.025em; }
+h2 { font-size: clamp(1.9rem, 2.4vw + 1.1rem, 3.1rem); line-height: 1.05; }
+h1 em, h2 em { font-style: normal; background: var(--hl, var(--yellow)); color: var(--hl-fg, #17171a); padding: 0 .16em; border-radius: .22em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+h3 { font-weight: 700; font-size: clamp(1.1rem, .3vw + 1.02rem, 1.25rem); margin: 24px 0 6px; line-height: 1.3; }
+h4 { font-weight: 700; font-size: 1.05rem; margin: 0; line-height: 1.3; }
+p { margin: 0 0 12px; }
+p:last-child { margin-bottom: 0; }
+.card p, .card li, .qa p, .box p, .rung p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+strong { font-weight: 800; }
+
+/* ---------- card treatments ---------- */
+.card { --fg: var(--ink); --head: var(--ink); --sub: var(--muted); --panel: var(--inset); --rule: var(--line); --btn: var(--ink); --btn-fg: var(--card); --hl: var(--yellow); --hl-fg: #17171a;
+  background: var(--card); color: var(--fg); border-radius: clamp(26px, 3.4vw, 40px); padding: clamp(22px, 4vw, 48px); scroll-margin-top: 72px; }
+.card.yellow { background: var(--yellow); --fg: #17171a; --head: #17171a; --sub: rgba(23,23,26,.62); --panel: rgba(255,255,255,.62); --rule: rgba(23,23,26,.16); --btn: #17171a; --btn-fg: var(--yellow); --hl: var(--blue); --hl-fg: #fff; }
+.card.blue { background: var(--blue); --fg: #eef1ff; --head: #ffffff; --sub: rgba(238,241,255,.75); --panel: rgba(255,255,255,.13); --rule: rgba(255,255,255,.25); --btn: #ffffff; --btn-fg: var(--blue); --hl: var(--yellow); --hl-fg: #17171a; }
+.card.orange { background: var(--orange); --fg: #17171a; --head: #17171a; --sub: rgba(23,23,26,.62); --panel: rgba(255,255,255,.6); --rule: rgba(23,23,26,.16); --btn: #17171a; --btn-fg: #ffffff; --hl: #ffffff; --hl-fg: #17171a; }
+.card.green { background: var(--green); --fg: #e5f4eb; --head: var(--mint); --sub: rgba(229,244,235,.72); --panel: rgba(255,255,255,.09); --rule: rgba(255,255,255,.18); --btn: var(--mint); --btn-fg: #0f3a26; --hl: var(--mint); --hl-fg: #0f3a26; }
+.card.berry { background: var(--berry); --fg: #fbe8ef; --head: var(--pink); --sub: rgba(251,232,239,.7); --panel: rgba(255,255,255,.08); --rule: rgba(255,255,255,.16); --btn: var(--pink); --btn-fg: var(--berry); --hl: var(--pink); --hl-fg: var(--berry); }
+.card.ink { background: #17171a; --fg: #ececf0; --head: #ffffff; --sub: rgba(236,236,240,.65); --panel: rgba(255,255,255,.08); --rule: rgba(255,255,255,.16); --btn: var(--yellow); --btn-fg: #17171a; --hl: var(--yellow); --hl-fg: #17171a; }
+.card h2, .card h3 { color: var(--head); }
+
+.kicker { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; color: var(--sub); margin-bottom: clamp(12px, 2vw, 20px); }
+.kicker .num { display: inline-grid; place-items: center; min-width: 40px; height: 40px; padding: 0 12px; border-radius: 999px; background: var(--btn); color: var(--btn-fg); line-height: 1; letter-spacing: .02em; }
+.lede { font-size: 1.06em; margin-top: clamp(12px, 2vw, 18px); }
+
+/* black round icon buttons — glyph always centred */
+.circle { width: 42px; height: 42px; border-radius: 50%; flex: none; display: inline-grid; place-items: center; background: var(--btn, var(--ink)); color: var(--btn-fg, var(--card)); font-size: 14px; font-weight: 700; line-height: 1; padding: 0; text-align: center; font-variant-numeric: tabular-nums; }
+.circle svg { display: block; }
+
+.panel { background: var(--panel); border-radius: 24px; padding: clamp(16px, 2.6vw, 24px); margin: 16px 0; }
+.panel.warn { background: var(--orange-soft); color: #17171a; --head: #17171a; }
+.tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; background: var(--btn); color: var(--btn-fg); border-radius: 999px; padding: 4px 12px; margin-bottom: 12px; }
+.panel.warn .tag { background: #17171a; color: #fff; }
+.takeaway { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; background: var(--blue); color: #fff; border-radius: 26px; padding: 14px 20px 14px 14px; margin: 16px 0; }
+.takeaway .circle { background: #fff; color: var(--blue); }
+.takeaway p { margin: 0; text-align: left; }
+.takeaway b { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; display: block; opacity: .8; margin-bottom: 2px; }
+ul.list { margin: 0 0 12px; padding-left: 1.1em; display: grid; gap: 8px; }
+ul.list li::marker { color: var(--head); }
+
+/* pull quote */
+.pull { background: var(--blue); color: #eef1ff; border-radius: 28px; padding: clamp(20px, 3.4vw, 36px); margin: 20px 0 4px; display: grid; gap: 12px; }
+.pull q { font-weight: 600; font-size: clamp(1.45rem, 1.8vw + 1rem, 2.3rem); line-height: 1.12; letter-spacing: -.02em; color: #fff; quotes: "“" "”"; }
+.pull q em { font-style: normal; background: var(--yellow); color: #17171a; padding: 0 .14em; border-radius: .2em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.pull .mono { color: rgba(238,241,255,.8); }
+.pull.light { background: var(--panel); color: var(--fg); } .pull.light q { color: var(--head); } .pull.light .mono { color: var(--sub); }
+
+/* ---------- hero (app screen) ---------- */
+.hero { display: grid; gap: clamp(14px, 2.4vw, 24px); }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { width: 48px; height: 48px; border-radius: 50%; background: #17171a; color: var(--yellow); display: grid; place-items: center; font-weight: 800; font-size: 14px; line-height: 1; letter-spacing: .02em; flex: none; }
+.top-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--card); color: var(--ink); font-size: 14px; font-weight: 700; white-space: nowrap; }
+.pill.dark { background: #17171a; color: #fff; }
+.pill.backlink { gap: 6px; text-decoration: none; padding-left: 12px; }
+.pill.backlink:hover, .pill.backlink:focus-visible { background: #17171a; color: #fff; outline: none; }
+.hero-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-inline: clamp(2px, 1vw, 8px); }
+.hero h1 { font-size: clamp(2.3rem, 5.6vw + .4rem, 5.4rem); line-height: 1.12; max-width: 14ch; --hl: var(--yellow); }
+.hero-title .circle { width: clamp(52px, 6vw, 72px); height: clamp(52px, 6vw, 72px); background: #17171a; color: var(--yellow); }
+.hero-title .circle:hover, .hero-title .circle:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.hero-card { background: var(--yellow); color: #17171a; border-radius: clamp(30px, 4vw, 44px); overflow: hidden; display: grid; }
+.hero-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: clamp(20px, 3.4vw, 36px) clamp(20px, 3.4vw, 40px) 0; }
+.faces { display: flex; }
+.faces img { width: clamp(56px, 7vw, 76px); height: clamp(56px, 7vw, 76px); border-radius: 50%; object-fit: cover; border: 4px solid var(--yellow); filter: grayscale(1) contrast(1.06); }
+.faces img + img { margin-left: -16px; }
+.hero-card-body { padding: clamp(28px, 6vw, 72px) clamp(20px, 3.4vw, 40px) clamp(40px, 5vw, 60px); display: grid; gap: 10px; }
+.hero-card-body .pill { justify-self: start; height: 34px; font-size: 13px; }
+.hero-big { font-weight: 600; font-size: clamp(1.7rem, 2.6vw + 1rem, 3rem); line-height: 1.05; letter-spacing: -.02em; margin: 6px 0 0; text-wrap: balance; }
+.hero-sub { margin: 0; color: rgba(23,23,26,.68); }
+.band { display: flex; align-items: center; justify-content: space-between; gap: 14px; text-decoration: none; font-weight: 600; font-size: clamp(1.1rem, .8vw + .9rem, 1.4rem); line-height: 1.2; padding: clamp(20px, 2.6vw, 28px) clamp(22px, 3.4vw, 40px) calc(clamp(20px, 2.6vw, 28px) + 26px); border-radius: clamp(28px, 3.6vw, 40px) clamp(28px, 3.6vw, 40px) 0 0; margin-top: -26px; position: relative; }
+.band:last-child { padding-bottom: clamp(20px, 2.6vw, 28px); }
+.band.b1 { background: var(--blue); color: #fff; }
+.band.b2 { background: #ffffff; color: #17171a; box-shadow: 0 6px 0 4px #ffffff; }
+.band svg { flex: none; }
+.band:hover span:first-child, .band:focus-visible span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+.band:focus-visible { outline: none; }
+
+/* ---------- summary ---------- */
+.sum-list { list-style: none; margin: clamp(14px, 2vw, 22px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px; counter-reset: s; }
+.sum-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; background: var(--panel); border-radius: 24px; padding: 16px 18px 16px 14px; text-align: left; }
+.sum-list li::before { counter-increment: s; content: counter(s); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--btn); color: var(--btn-fg); font-size: 14px; font-weight: 700; line-height: 1; }
+.read-more { display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; background: var(--btn); color: var(--btn-fg); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 8px 8px 22px; }
+.read-more .circle { background: var(--btn-fg); color: var(--btn); width: 36px; height: 36px; }
+.read-more:hover, .read-more:focus-visible { outline: 2px solid var(--btn); outline-offset: 3px; }
+
+/* ---------- layout + index ---------- */
+.layout { display: grid; gap: clamp(10px, 1.6vw, 18px); }
+main { display: grid; gap: clamp(10px, 1.6vw, 18px); }
+.index { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 8px; margin-inline: calc(clamp(12px, 3vw, 32px) * -1); padding-inline: clamp(12px, 3vw, 32px); }
+.index-label { display: none; }
+.index ul { list-style: none; margin: 0; padding: 0 0 2px; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.index ul::-webkit-scrollbar { display: none; }
+.index a { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: none; background: var(--card); border-radius: 999px; padding: 8px 14px 8px 8px; }
+.index a span { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--inset); font-size: 11px; line-height: 1; color: var(--muted); }
+.index a:hover, .index a:focus-visible { background: #17171a; color: #fff; outline: none; }
+.index a:hover span, .index a:focus-visible span { background: var(--yellow); color: #17171a; }
+
+/* ---------- stats ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0 4px; }
+.tile { border-radius: 26px; padding: clamp(14px, 2vw, 20px); display: grid; gap: 6px; align-content: space-between; min-height: clamp(120px, 12vw, 156px); min-width: 0; }
+.tile .big { font-weight: 700; font-size: clamp(1.7rem, 2vw + 1rem, 2.6rem); line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.tile .lbl { font-size: 13.5px; line-height: 1.35; }
+.tile.a { background: var(--yellow); color: #17171a; }
+.tile.b { background: var(--blue); color: #fff; }
+.tile.c { background: var(--orange); color: #17171a; }
+.tile.d { background: #17171a; color: #fff; } .tile.d .big { color: var(--yellow); }
+
+/* ---------- financing ---------- */
+.fin { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+.fin-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; gap: 8px; min-width: 0; }
+.fin-card > h4 { font-weight: 700; font-size: clamp(1.35rem, .8vw + 1.1rem, 1.7rem); letter-spacing: -.02em; line-height: 1.1; padding: 6px 6px 2px; align-self: end; display: flex; align-items: center; gap: 10px; }
+.fin-card > h4::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--dot, var(--yellow)); flex: none; }
+.fin-card:nth-child(2) { --dot: var(--blue); } .fin-card:nth-child(3) { --dot: var(--orange); } .fin-card:nth-child(4) { --dot: #17171a; }
+.box { border-radius: 22px; padding: 16px 18px; min-width: 0; }
+.box .mono { display: block; margin-bottom: 6px; color: var(--muted); }
+.box p { font-size: .95em; line-height: 1.5; }
+.box.def { background: var(--inset); }
+.box.who { background: var(--yellow-soft); color: #17171a; }
+.box.who .mono { color: rgba(23,23,26,.6); }
+
+/* ---------- fun fact ---------- */
+.fact { position: relative; background: #17171a; color: #ececf0; border-radius: clamp(26px, 3.4vw, 40px); padding: clamp(22px, 4vw, 48px); overflow: hidden; }
+.fact::after { content: ""; position: absolute; inset: auto 0 0 0; height: 38%; background-image: linear-gradient(rgba(247,233,75,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(247,233,75,.35) 1px, transparent 1px); background-size: 34px 34px; pointer-events: none; }
+.fact > * { position: relative; z-index: 1; }
+.fact .mono { display: inline-block; background: var(--yellow); color: #17171a; border-radius: 999px; padding: 5px 12px; }
+.fact .big { font-weight: 600; font-size: clamp(1.6rem, 2vw + 1rem, 2.6rem); line-height: 1.1; letter-spacing: -.02em; margin: 16px 0 14px; text-align: left; color: #fff; }
+.fact .big em { font-style: normal; color: var(--yellow); }
+.fact .small { opacity: .85; padding-bottom: clamp(40px, 8vw, 90px); text-align: justify; }
+
+/* ---------- economics diagram ---------- */
+.flow { display: grid; gap: 8px; margin: 20px 0; grid-template-areas: "lp" "e1" "fund" "e2" "st" "e3" "mc"; }
+.node { border-radius: 24px; padding: 16px 18px; background: var(--inset); min-width: 0; display: grid; gap: 4px; align-content: start; }
+.node .mono { color: var(--muted); }
+.node b { font-weight: 700; font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.05; }
+.node small { font-size: .88em; line-height: 1.45; }
+.node.fund { background: var(--blue); color: #eef1ff; } .node.fund .mono { color: rgba(238,241,255,.75); } .node.fund b { color: #fff; }
+.node.mc { background: #17171a; color: #ececf0; } .node.mc .mono { color: var(--yellow); }
+.node.st { background: var(--yellow); color: #17171a; } .node.st .mono { color: rgba(23,23,26,.6); }
+.edge { display: grid; gap: 4px; align-content: center; justify-items: center; text-align: center; padding: 4px 6px; font-size: 13.5px; line-height: 1.3; color: var(--muted); }
+.edge span { display: block; }
+.edge strong { color: var(--ink); font-weight: 700; }
+.edge .h { display: none; } .edge .v { display: block; }
+.n-lp { grid-area: lp; } .e1 { grid-area: e1; } .n-fund { grid-area: fund; } .e2 { grid-area: e2; } .n-st { grid-area: st; } .e3 { grid-area: e3; } .n-mc { grid-area: mc; }
+.fees { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 10px; margin: 16px 0; }
+.fee { background: var(--inset); border-radius: 24px; padding: 18px; }
+.fee:first-child { background: var(--yellow-soft); color: #17171a; }
+.fee:last-child { background: var(--blue-soft); color: #17171a; }
+.fee .pct { font-weight: 700; font-size: clamp(2rem, 2vw + 1.3rem, 2.8rem); letter-spacing: -.03em; line-height: 1; display: block; margin-bottom: 8px; }
+
+/* ---------- power law ---------- */
+.bars { display: flex; align-items: flex-end; gap: clamp(3px, .6vw, 7px); height: clamp(110px, 16vw, 190px); margin: 20px 0 8px; }
+.bars span { flex: 1; border-radius: 10px 10px 4px 4px; background: rgba(255,255,255,.16); min-height: 6px; }
+.bars span.hit { background: var(--pink); }
+.bars span.hit2 { background: var(--orange); }
+.bars-cap { display: flex; justify-content: space-between; gap: 10px; color: var(--sub); margin-bottom: 16px; }
+
+/* ---------- roles ---------- */
+.rungs { display: grid; gap: 10px; margin: 18px 0; }
+.rung { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; background: var(--panel); border-radius: 26px; padding: 18px 20px 18px 16px; }
+.rung:nth-child(1) .circle { background: var(--yellow); color: #17171a; }
+.rung:nth-child(2) .circle { background: var(--orange); color: #17171a; }
+.rung:nth-child(3) .circle { background: var(--green); color: var(--mint); }
+.rung:nth-child(4) .circle { background: var(--blue); color: #fff; }
+.rung:nth-child(5) .circle { background: #17171a; color: var(--yellow); }
+.rung-body { display: grid; gap: 10px; min-width: 0; }
+.rung-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.rung-head b { font-weight: 700; font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.05; color: var(--head); }
+.rung-head .mono { color: var(--sub); }
+.rung-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; }
+.rung-cols .mono { display: block; color: var(--sub); margin-bottom: 2px; }
+.rung p { font-size: .95em; line-height: 1.5; margin: 0; }
+
+/* ---------- duo ---------- */
+.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; margin: 16px 0; }
+.mini { background: var(--panel); border-radius: 26px; padding: 20px; min-width: 0; }
+.mini h4 { font-weight: 700; font-size: 1.5rem; letter-spacing: -.02em; line-height: 1.05; margin-bottom: 8px; color: var(--head); }
+.mini.solid { background: var(--btn); color: var(--btn-fg); } .mini.solid h4 { color: var(--btn-fg); }
+.mini .pct { font-weight: 700; font-size: clamp(2.4rem, 2vw + 1.6rem, 3.2rem); letter-spacing: -.04em; line-height: 1; display: block; margin-bottom: 6px; }
+
+/* ---------- exits ---------- */
+.rows { display: grid; gap: 8px; margin: 16px 0 0; }
+.row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; background: var(--panel); border-radius: 26px; padding: 16px 20px 16px 16px; }
+.row b { display: block; font-weight: 700; font-size: 1.35rem; letter-spacing: -.02em; line-height: 1.1; color: var(--head); margin-bottom: 4px; }
+.row p { margin: 0; text-align: justify; }
+
+/* ---------- Q&A ---------- */
+.qa-wrap { display: grid; gap: clamp(10px, 1.6vw, 18px); scroll-margin-top: 72px; }
+.qa-head { padding: clamp(10px, 2vw, 20px) 6px 0; }
+.qa-head .kicker { color: var(--muted); }
+.qa-list { display: grid; gap: clamp(10px, 1.4vw, 14px); }
+.qa { background: var(--card); border-radius: 30px; padding: clamp(20px, 3vw, 30px); min-width: 0; }
+.qa-top { display: flex; gap: 14px; align-items: flex-start; justify-content: space-between; }
+.qa-top h3 { margin: 0; font-weight: 700; font-size: clamp(1.2rem, .6vw + 1.05rem, 1.45rem); letter-spacing: -.015em; line-height: 1.2; min-width: 0; }
+.qa .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 14px; }
+.qa .chip { font-size: 12px; font-weight: 700; background: var(--inset); color: var(--muted); border-radius: 999px; padding: 4px 12px; }
+.qa .circle { background: #17171a; color: #fff; width: 36px; height: 36px; }
+.who-tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .03em; padding: 2px 10px; border-radius: 999px; background: var(--yellow); color: #17171a; margin-right: 6px; vertical-align: 1px; }
+.who-tag.e { background: var(--orange); }
+
+/* chips (LPs) */
+.chips-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 16px; }
+.chips-row span { font-size: 13px; font-weight: 700; background: var(--panel); border-radius: 999px; padding: 6px 14px; }
+
+/* links */
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; margin-top: 16px; }
+.link { display: flex; justify-content: space-between; align-items: center; gap: 14px; background: var(--panel); color: var(--fg); text-decoration: none; border-radius: 26px; padding: 18px 16px 18px 20px; min-width: 0; border: 2px solid transparent; }
+.link > div { min-width: 0; }
+.link b { display: block; font-weight: 700; font-size: 1.2rem; letter-spacing: -.01em; line-height: 1.2; color: var(--head); }
+.link small { display: block; font-size: .88em; line-height: 1.4; margin-top: 4px; }
+.link:hover, .link:focus-visible { border-color: #17171a; outline: none; }
+
+/* footer */
+.foot { background: #17171a; color: #ececf0; border-radius: clamp(26px, 3.4vw, 40px); padding: clamp(28px, 5vw, 56px) clamp(22px, 5vw, 56px); display: grid; gap: 22px; }
+.foot .mono { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; opacity: .7; }
+.foot .credit { font-weight: 600; font-size: clamp(2rem, 3vw + 1rem, 3.6rem); letter-spacing: -.03em; line-height: 1.02; color: #fff; }
+.foot .credit em { font-style: normal; background: var(--yellow); color: #17171a; padding: 0 .14em; border-radius: .2em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.foot p { margin: 0; opacity: .78; }
+.sub { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; border-top: 1px solid rgba(255,255,255,.16); padding-top: 20px; }
+.sub p { flex: 1 1 260px; }
+.sub-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--yellow); color: #17171a; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 8px 8px 22px; max-width: 100%; }
+.sub-btn .circle { background: #17171a; color: var(--yellow); width: 36px; height: 36px; }
+.sub-btn:hover, .sub-btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+
+/* ---------- Phone ---------- */
+@media (max-width: 699px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tile .lbl { font-size: 12.5px; }
+  .hero h1 { max-width: none; }
+  .hero-title .circle { display: none; }
+  .fin { grid-template-columns: 1fr; }
+  .fin-card { grid-row: auto; grid-template-rows: none; }
+  .rung { grid-template-columns: 1fr; gap: 10px; padding: 16px; }
+  .rung-cols { grid-template-columns: 1fr; }
+  .qa-top .circle { display: none; }
+  .sub { flex-direction: column; align-items: stretch; }
+  .sub-btn, .read-more { justify-content: space-between; }
+  .read-more { display: flex; }
+  .top-chips .pill { height: 36px; padding: 0 12px; font-size: 13px; }
+}
+@media (min-width: 860px) {
+  .flow { grid-template-columns: minmax(0, 1fr) minmax(110px, .7fr) minmax(0, 1fr) minmax(110px, .7fr) minmax(0, 1fr); grid-template-areas: "lp e1 fund e2 st" ". . e3 . ." ". . mc . ."; align-items: stretch; }
+  .edge .h { display: block; } .edge .v { display: none; }
+  .e3 { padding: 6px 0; }
+}
+/* ---------- Computer ---------- */
+@media (min-width: 1100px) {
+  .layout { grid-template-columns: 210px minmax(0, 1fr); column-gap: 24px; align-items: start; }
+  .index { top: calc(env(safe-area-inset-top, 0px) + 20px); margin: 0; padding: 18px 12px; background: var(--card); border-radius: 28px; }
+  .index-label { display: block; color: var(--muted); margin: 0 6px 10px; }
+  .index ul { flex-direction: column; overflow: visible; gap: 2px; }
+  .index a { background: transparent; padding: 6px 10px 6px 6px; }
+  .qa-list { display: block; columns: 2; column-gap: 14px; }
+  .qa-list .qa { break-inside: avoid; margin-bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Session 2 additions ---------- */
+.faces .init { width: clamp(56px, 7vw, 76px); height: clamp(56px, 7vw, 76px); border-radius: 50%; border: 4px solid var(--yellow); background: #17171a; color: var(--yellow); display: grid; place-items: center; font-weight: 700; font-size: clamp(1.05rem, 1vw + .8rem, 1.4rem); letter-spacing: -.01em; }
+.faces .init + .init { margin-left: -16px; background: var(--blue); color: #fff; }
+.jcurve { margin: 18px 0 8px; background: var(--inset); border-radius: 26px; padding: clamp(14px, 2vw, 22px); }
+.jcurve svg { display: block; width: 100%; height: auto; overflow: visible; }
+.jcurve .axis { stroke: var(--muted); stroke-width: 2; stroke-dasharray: 6 6; vector-effect: non-scaling-stroke; }
+.jcurve .curve { fill: none; stroke: var(--blue); stroke-width: 5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.jcurve .dot { fill: var(--orange); } .jcurve .dot.hi { fill: var(--blue); }
+.jcurve text { fill: var(--muted); font: 600 15px var(--sans); }
+.fin.models .fin-card:nth-child(5) { --dot: var(--green); } .fin.models .fin-card:nth-child(6) { --dot: var(--pink); }
+@media (max-width: 699px) { .jcurve text { font-size: 22px; } }
+@media (min-width: 1100px) { .fin.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ---------- Session 3 additions ---------- */
+#outreach .fin-card:nth-child(3) { --dot: #17171a; }
+.funnel { display: grid; gap: 0; margin: 18px 0 10px; border-top: 1px solid var(--rule); }
+.f-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) auto; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.f-bar { display: flex; justify-content: center; }
+.f-bar span { display: grid; place-items: center; height: 38px; border-radius: 12px; background: #17171a; color: #fff; font-weight: 700; font-size: 1.05rem; min-width: 52px; }
+.f-row.deal .f-bar span { background: var(--orange); }
+.f-stage b { display: block; font-weight: 700; font-size: 1.05rem; line-height: 1.15; color: var(--head); }
+.f-stage .mono { color: var(--muted); }
+.f-rej { font-weight: 700; font-size: clamp(1.2rem, 1vw + 1rem, 1.6rem); letter-spacing: -.02em; text-align: right; color: var(--head); }
+.f-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) auto; gap: 14px; padding: 0 0 8px; color: var(--muted); }
+.f-head span:last-child { text-align: right; }
+.q10 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 16px 0; }
+.q10 div { background: var(--inset); border-radius: 18px; padding: 14px 16px; min-width: 0; }
+.q10 .mono { color: var(--muted); display: block; margin-bottom: 4px; }
+.q10 b { display: block; font-weight: 700; font-size: 1.05rem; line-height: 1.15; margin-bottom: 4px; }
+.q10 p { font-size: .9em; line-height: 1.4; text-align: left; }
+.q10 div.hl { background: #17171a; color: #fff; } .q10 div.hl .mono { color: var(--yellow); }
+.law { margin: 16px 0; border-top: 1px solid var(--rule); }
+.law p { padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: clamp(1.15rem, 1vw + .95rem, 1.5rem); line-height: 1.25; letter-spacing: -.01em; text-align: left; }
+.law p em { font-style: normal; font-weight: 700; }
+.law p:last-child em { background: var(--yellow); color: #17171a; padding: 0 .2em; border-radius: .2em; }
+.law-src { color: var(--sub, var(--muted)); margin-bottom: 12px; display: block; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; }
+.tools span { background: var(--panel); border-radius: 999px; padding: 6px 12px; font-size: 13px; }
+.tools span b { font-weight: 700; }
+.code { background: #17171a; color: #ececf0; border-radius: 14px; padding: 12px 14px; font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; line-height: 1.6; margin-top: 8px; }
+.code i { font-style: normal; color: var(--yellow); }
+.cmds { display: grid; gap: 6px; margin-top: 8px; }
+.cmds span { font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; background: var(--inset); border-radius: 10px; padding: 6px 10px; color: var(--muted); }
+@media (min-width: 860px) { .q10 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 699px) { .f-row, .f-head { grid-template-columns: 74px minmax(0, 1fr) auto; gap: 10px; } .f-bar span { height: 34px; } }
+</style>
+</head>
+<body>
+
+<div class="wrap" lang="en">
+
+  <header class="hero">
+    <div class="topbar">
+      <a class="pill backlink" href="../index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>All notes</a>
+      <div class="top-chips"><span class="pill dark">Baby VC · Batch #14</span><span class="pill">Session 6</span></div>
+    </div>
+    <div class="hero-title">
+      <h1>The art of getting a founder <em>to pick you.</em></h1>
+      <a class="circle" href="#summary" aria-label="Go to the executive summary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <div class="faces"><img src="data:image/jpeg;base64,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" alt="Nicolas Chow"><img src="data:image/jpeg;base64,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" alt="Elisabetta Sakiotis"></div>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17171a" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </div>
+      <div class="hero-card-body">
+        <span class="pill">Detailed notes</span>
+        <p class="hero-big">With Nicolas Chow &amp; Elisabetta Sakiotis</p>
+        <p class="hero-sub">Principal and Senior Investment Associate at RAISE Ventures, investing from Seed to Series B in Europe.</p>
+      </div>
+      <a class="band b1" href="#summary"><span>Executive summary · 2 min</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="band b2" href="#qa"><span>15 questions &amp; answers</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </header>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section class="card blue" id="summary">
+    <div class="kicker mono"><span>Executive summary</span><span>2-minute read</span></div>
+    <h2>Session 7 in <em>six points.</em></h2>
+    <ol class="sum-list">
+      <li>Picking is only half of a deal. In competitive rounds, the founder has to pick you too, so investing has a sales side: know what founders value and when to show it.</li>
+      <li>On the first call, be curious, not a know-it-all. The founder is the expert; preparation, honest questions and personality build chemistry.</li>
+      <li>Respect founders' time: be clear on process and timeline, keep calls few and productive, and remember you will pass on most of them.</li>
+      <li>Talk before you send a term sheet. Align on what the founder cares about, and if you can, hand them a full syndicate rather than a problem.</li>
+      <li>Speed wins at pre-seed and seed: be first to meet, fastest through diligence, and able to decide.</li>
+      <li>Know your archetype (expert, connector or operator), give more than you take, and stay consistent. Your reputation follows you.</li>
+    </ol>
+    <div class="pull light" style="margin-top:16px">
+      <q>As a VC, you are often <em>the dumbest person in the room.</em></q>
+      <span class="mono">RAISE Ventures, on why curiosity wins first calls</span>
+    </div>
+    <a class="read-more" href="#speakers">Read the full notes <span class="circle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+  </section>
+
+  <div class="layout">
+    <nav class="index" aria-label="Contents">
+      <div class="index-label mono">Contents</div>
+      <ul>
+        <li><a href="#speakers"><span>01</span>Speakers</a></li>
+        <li><a href="#pick"><span>02</span>Founders pick too</a></li>
+        <li><a href="#firstcall"><span>03</span>The first call</a></li>
+        <li><a href="#process"><span>04</span>Process &amp; time</a></li>
+        <li><a href="#refs"><span>05</span>References</a></li>
+        <li><a href="#termsheet"><span>06</span>Term sheets</a></li>
+        <li><a href="#cases"><span>07</span>Why they chose RAISE</a></li>
+        <li><a href="#archetypes"><span>08</span>Your archetype</a></li>
+        <li><a href="#founders"><span>09</span>Reading founders</a></li>
+        <li><a href="#qa"><span>10</span>Q&amp;A</a></li>
+        <li><a href="#more"><span>11</span>Learn more</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <!-- 01 SPEAKERS -->
+      <section class="card" id="speakers">
+        <div class="kicker mono"><span class="num">01</span><span>The speakers &amp; RAISE</span></div>
+        <h2>A product manager <em>and a connector.</em></h2>
+        <p class="lede">The RAISE Ventures team is five people with deliberately varied backgrounds and nationalities, from decades in VC to accelerators. Two of them hosted the session.</p>
+        <h3>Nicolas Chow, Investment Director</h3>
+        <p>Nicolas Chow (NYU) spent about five years as a product manager before joining <strong>Plug and Play</strong>in Silicon Valley, investing in early-stage startups. He moved to Paris via Plug and Play. At RAISE he invests from Seed to Series B in companies deploying AI in critical sectors (energy, health, industry). Recent deals include Lightsonic, Atmospheric AI, Redberry Labs, Alinia AI and Fleuret AI.</p>
+        <h3>Elisabetta Sakiotis, Senior Associate</h3>
+        <p>Elisabetta Sakiotis joined VC straight after graduating. Before RAISE she was at <strong>Rockstart</strong>, an accelerator and early-stage investor, where she focused on biotech and environment: the deep expertise her colleague pointed to as the "vertical bar" of her T-shaped profile.</p>
+        <h3>RAISE</h3>
+        <p>RAISE was founded in 2013 by Clara Gaymard, former CEO of GE France, and Gonzague de Blignières, former head of Barclays Private Equity France. It began with a philanthropic arm, <strong>RAISE Sherpas</strong>, which makes zero-interest loans to French entrepreneurs, and grew into a group of funds: impact investing in mid-caps, venture, and more.</p>
+        <div class="stats">
+          <div class="tile a"><span class="mono">Seed</span><span class="big">€1–2M</span><span class="lbl">tickets, through RAISE Seed for Good (Tech for Good thesis)</span></div>
+          <div class="tile b"><span class="mono">Series A &amp; B</span><span class="big">€3–8M</span><span class="lbl">tickets, from a second venture fund</span></div>
+          <div class="tile c"><span class="mono">Diligence</span><span class="big">~4 weeks</span><span class="lbl">on average; the fastest was 2 weeks</span></div>
+          <div class="tile d"><span class="mono">Role</span><span class="big">Lead / co-lead</span><span class="lbl">rounds, and sends full term sheets with a syndicate</span></div>
+        </div>
+
+      <!-- 02 PICK -->
+      <section class="card orange" id="pick">
+        <div class="kicker mono"><span class="num">02</span><span>The other half of the deal</span></div>
+        <h2>You pick founders. <em>Founders pick you.</em></h2>
+        <p class="lede">The bootcamp had covered how investors choose. This session was about the other side: in a competitive round, the founder chooses between VCs. That is a sales process, and selling means knowing who you sell to, what they care about and what they value.</p>
+        <h3>What founders value, according to the fellows</h3>
+        <ul class="list">
+          <li><strong>The fund's brand.</strong> The same offer from a French fund and from Sequoia is not the same offer.</li>
+          <li><strong>Exit opportunities.</strong> Knowing the right people in corporate M&amp;A teams, as one fellow saw in Berlin.</li>
+          <li><strong>Trust.</strong> Something will almost certainly go wrong; can the founder call you and work it out together?</li>
+          <li><strong>Relevant portfolio.</strong> What companies the fund has backed in the same space.</li>
+        </ul>
+        <p>RAISE built on a study of 200+ founders asked what mattered in their first rounds. The patterns: <strong>sector understanding</strong>, <strong>chemistry and trust</strong>, <strong>customer introductions</strong> and the network.</p>
+        <div class="takeaway"><span class="circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p><b>Key takeaway</b>Map those values onto your own funnel: at which step do you show sector knowledge, build chemistry, prove your network? Some happen at every step, but each stage has one or two to focus on. Often you sell yourself and your vision before anything else.</p></div>
+      </section>
+
+      <!-- 03 FIRST CALL -->
+      <section class="card" id="firstcall">
+        <div class="kicker mono"><span class="num">03</span><span>The first call</span></div>
+        <h2>Curious, prepared, <em>and yourself.</em></h2>
+        <p class="lede">The first call is a chance to learn the founder's story and the basics: who they are, their chemistry, what's happening in the round, and whether it is competitive. RAISE also uses it to introduce itself. The best first calls feel like you are already on the same team.</p>
+        <div class="rows">
+          <div class="row"><span class="circle">1</span><div><b>Don't be the expert</b><p>Founders have spent years on their problem. Coming across as dominant or a know-it-all kills chemistry. Curiosity always wins: even in crowded spaces such as AI agents, look for what this person does differently.</p></div></div>
+          <div class="row"><span class="circle">2</span><div><b>Be authentic</b><p>Early in your career it's tempting to follow a script. Founders can tell. Show personality and enthusiasm, especially on video, where building a relationship is harder.</p></div></div>
+          <div class="row"><span class="circle">3</span><div><b>Do your homework</b><p>The goal isn't to ask a clever question but to know what's worth asking. Mention a competitor you looked at and why it fell short, then ask what they do differently. It shows you're trying to see their side.</p></div></div>
+          <div class="row"><span class="circle">4</span><div><b>Say when you don't know</b><p>Advice from a mentor, still used today: say it directly, "this is new to me, help me understand." Better than pretending to be an expert and asking a bad question.</p></div></div>
+          <div class="row"><span class="circle">5</span><div><b>Lost on the product? Focus on the founder</b><p>What motivates them, how they met their co-founders, their personal story. Then set up a second call to go deeper.</p></div></div>
+          <div class="row"><span class="circle">6</span><div><b>Share your conviction</b><p>If you feel comfortable, share your view of the space, or confirm when they say something you believe. Mission alignment helps a lot.</p></div></div>
+        </div>
+        <div class="panel">
+          <span class="tag">Nicolas Chow's first-call format</span>
+          <p>He sets the pace: a very short intro of RAISE (3–4 minutes), then asks the founder if they have questions for him, then moves to his questions. Others go straight to questions; it's personal style. A preference for <strong>no deck</strong> on the call (send it before or after) unless something technical needs showing, so it stays a conversation.</p>
+        </div>
+      </section>
+
+      <!-- 04 PROCESS -->
+      <section class="card yellow" id="process">
+        <div class="kicker mono"><span class="num">04</span><span>Process &amp; founders' time</span></div>
+        <h2>Clarity, speed, <em>no wasted calls.</em></h2>
+        <ul class="list">
+          <li><strong>Be transparent.</strong> On the process, the timeline, what you need and what's happening in your fund.</li>
+          <li><strong>Make every call count.</strong> A short call beats a long email thread; a productive meeting beats three vague ones. Most of the deals you speak to, you will pass on. That's how venture works, and founders talk about investors who wasted their time.</li>
+          <li><strong>Keep it lean.</strong> His ideal: first call, then a business deep dive, then a tech deep dive, with WhatsApp messages and short calls in between. Internal alignment with partners happens between steps. Racing through in three days risks a partner stopping it at the end.</li>
+          <li><strong>Move fast.</strong> Speed is "probably the number one" advantage at pre-seed and seed: being first to meet, the fastest through diligence, and able to make a decision.</li>
+        </ul>
+        <div class="panel">
+          <span class="tag">Momentum &amp; patience</span>
+          <p>Deals are an art and a science of timing: if no lead appears for three weeks, maybe you're moving too fast. And deals don't always close in 4–6 weeks. Some take months: you lacked conviction at first, but over three or four months the founders proved their sales and strategy. Don't be afraid to revisit a deal. That time builds trust and lets you watch progress.</p>
+        </div>
+      </section>
+
+      <!-- 05 REFS -->
+      <section class="card" id="refs">
+        <div class="kicker mono"><span class="num">05</span><span>References &amp; expert calls</span></div>
+        <h2>Know who's talking, <em>and what you're asking.</em></h2>
+        <div class="duo">
+          <div class="mini"><h4>Expert references</h4><p>People who know the space but not the company. Done first. Take their view of the technology "with a pinch of salt"; listen closely when you ask about their challenges and whether the problem is real. Watch for bias: a large corporate that is bad at innovation will often doubt anything cutting-edge.</p></div>
+          <div class="mini solid"><h4>Company references</h4><p>Customers and advisers of the startup. Done late, when you're nearly there or very excited, because it's a sensitive relationship you don't control. Customers tell you the value proposition and why they chose it; taken seriously.</p></div>
+        </div>
+        <div class="takeaway"><span class="circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p><b>The ideal reference</b>Introduce the startup to a potential customer or expert from your network, then get their feedback. It proves your value to the founder and gives you a better-informed reference at the same time.</p></div>
+        <p>Most VCs avoid paid expert networks: paying for every reference would be impractical, and the strength of a VC is its own network. Ideally you invest in companies you can support. If the sector is new to you, find another angle: you know the sales motion they're building, or you can help a young team structure a board.</p>
+        <div class="panel warn">
+          <span class="tag">Feedback worth hearing</span>
+          <p>Founders love what they build and want investors as curious and excited about it as they are, especially CTOs. Diligence depth is a chemistry opportunity, not just a box to tick.</p>
+        </div>
+      </section>
+
+      <!-- 06 TERM SHEET -->
+      <section class="card blue" id="termsheet">
+        <div class="kicker mono"><span class="num">06</span><span>Term sheets &amp; valuation</span></div>
+        <h2>Talk first. <em>Then send.</em></h2>
+        <div class="rows">
+          <div class="row"><span class="circle">1</span><div><b>Align before sending</b><p>A term sheet out of nowhere is intimidating, especially for first-time founders. A conversation first shows collaboration and care, tells you how they think about the syndicate, and lets you tailor the terms to what they care about, such as the size of the ESOP pool.</p></div></div>
+          <div class="row"><span class="circle">2</span><div><b>Secure the deal before the paper</b><p>Once a term sheet is sent, lawyers get involved and it becomes formal and less collaborative. Some funds only send one when they're ~99% sure it will be signed, rather than to be negotiated against another fund.</p></div></div>
+          <div class="row"><span class="circle">3</span><div><b>Give a solution, not a problem</b><p>RAISE sends a full term sheet whenever it can: if its ticket is €2M and the round is €4M, it brings the whole €4M with a cohesive, thoughtful syndicate, so the founder can just sign.</p></div></div>
+        </div>
+        <h3>Talking valuation</h3>
+        <p>Yes, they discuss it. A common approach is to talk in dilution ranges: raising €5M for 25% implies about a €20M post-money. Founders rarely say it directly, but sometimes signal "we prefer you, but you need to match."</p>
+        <div class="duo">
+          <div class="mini"><h4>Valuation on the pitch deck</h4><p>A bit of a red flag: aggressive, and a sign the founder isn't familiar with fundraising. The market sets the price.</p></div>
+          <div class="mini solid"><h4>Price above everything</h4><p>If price is the only priority, it raises the question of why they're building. The founders RAISE wants think strategically: there is more to gain from the right partners than an extra €1–2M of valuation.</p></div>
+        </div>
+      </section>
+
+      <!-- 07 CASES -->
+      <section class="card green" id="cases">
+        <div class="kicker mono"><span class="num">07</span><span>Why founders chose RAISE</span></div>
+        <h2>Four deals, <em>four different reasons.</em></h2>
+        <p class="lede">RAISE asks every founder why they chose them. The answers were all different, because every founder is different.</p>
+        <div class="rows">
+          <div class="row"><span class="circle">1</span><div><b>Lightsonic · belief and intros</b><p>Turns existing fibre-optic networks into sensors: sound near the fibre leaves a signature in the light, used to detect water leaks. The process dragged: the syndicate fell apart just before the term sheet and RAISE had to pause. The company later found a lead in a very competitive round, and came back. Why? RAISE believed early, and showed value mid-diligence with introductions to its LP Orange and to water utilities such as Suez and Veolia. RAISE never introduces a company to its LPs unless it believes in it; its reputation is at stake. Closed as a €3.3M seed with Maki.vc and Sondo.</p></div></div>
+          <div class="row"><span class="circle">2</span><div><b>Atmospheric AI · alignment and speed</b><p>Builds a digital twin of the global supply chain for raw materials, starting with polymers, so companies can measure the carbon of what they buy without collecting third-party data. The founders initially didn't want VCs, but saw value in smaller, mission-driven funds. RAISE's Tech for Good thesis aligned from day one, the competitive landscape was clear, and it moved fast. RAISE backed the pre-seed and followed into a $10M seed led by DBL Partners.</p></div></div>
+          <div class="row"><span class="circle">3</span><div><b>Redberry Labs · partner expertise</b><p>Insurance for AI agents: when an agent acting like an employee gives a wrong recommendation, hallucinates or names a competitor, who is liable and how are victims compensated? A RAISE partner spent 9–10 years investing only in fintech and insurtech, including cyber insurance, which RAISE sees as the model for AI insurance. That expertise, and a thesis on responsible, deployable AI, made the difference.</p></div></div>
+          <div class="row"><span class="circle">4</span><div><b>A stealth company · patience and deep tech DD</b><p>Applies formal methods (mathematical proofs of correctness, born in maths and code) to AI agents and business language. RAISE built the relationship slowly over about a year, making connections and giving advice on fundraising strategy before the raise. In the end they chose RAISE because it took the time to understand the technology, which many other investors didn't.</p></div></div>
+        </div>
+      </section>
+
+      <!-- 08 ARCHETYPES -->
+      <section class="card" id="archetypes">
+        <div class="kicker mono"><span class="num">08</span><span>Your VC archetype</span></div>
+        <h2>Expert, connector <em>or operator?</em></h2>
+        <div class="fin three">
+          <div class="fin-card">
+            <h4>The expert</h4>
+            <div class="box def"><span class="mono">Edge</span><p>Comes from a sector and invests in it, often at a sector fund.</p></div>
+            <div class="box who"><span class="mono">Brings</span><p>Deep knowledge of the market and the technology.</p></div>
+          </div>
+          <div class="fin-card">
+            <h4>The connector</h4>
+            <div class="box def"><span class="mono">Edge</span><p>"I'm not an expert in any field, but if I can't answer your question, I know who can."</p></div>
+            <div class="box who"><span class="mono">Brings</span><p>Value through introductions. Nicolas Chow's archetype.</p></div>
+          </div>
+          <div class="fin-card">
+            <h4>The operator</h4>
+            <div class="box def"><span class="mono">Edge</span><p>Has built a company before.</p></div>
+            <div class="box who"><span class="mono">Brings</span><p>First-hand experience of founders' problems and strategic support.</p></div>
+          </div>
+        </div>
+        <p>Pick the one that fits and be the best at it. A team mixing all three is a nice-to-have, not a must-have: some of the best investors he knows aren't operators. What matters is diversity of thought, and building your network where you invest (for B2B SaaS, corporate innovation teams are great connectors).</p>
+        <h3>How to build connections</h3>
+        <ul class="list">
+          <li><strong>Make connections to get connections.</strong> Think about who you can introduce, not just who you know. Give more than you take.</li>
+          <li><strong>Add value fast.</strong> After meeting someone, make a mental note and try to connect them with someone within the week.</li>
+          <li><strong>Maintain it.</strong> You can't connect, trade a favour, disappear for a year and a half and come back. Coffees and drinks in person can't be automated.</li>
+          <li><strong>Let it snowball.</strong> Connectors invite you to their dinners; host your own to bring people together.</li>
+        </ul>
+        <div class="panel">
+          <span class="tag">Be T-shaped</span>
+          <p>A generalist who can pick up many topics quickly, with real depth in one niche: human-centred AI, cybersecurity, biotech. Like a footballer who is the best at free kicks or headers, find your one thing as fast as possible and show that depth when you talk to VCs.</p>
+        </div>
+      </section>
+
+      <!-- 09 FOUNDERS -->
+      <section class="card orange" id="founders">
+        <div class="kicker mono"><span class="num">09</span><span>Reading founders &amp; bias</span></div>
+        <h2>What they look for, <em>and how they check themselves.</em></h2>
+        <p class="lede">What RAISE looks for: <strong>founder-market fit</strong> (a deep understanding of the customer or problem: someone who spent ten years in gaming and jumps into biotech would raise questions), repeat founders, a hustler mentality, a bias for action, and a vision and mission.</p>
+        <div class="panel">
+          <span class="tag">Correcting for culture</span>
+          <p>Some VC firms are very homogeneous; RAISE tries hard not to be. A Finnish founder may be more conservative and express less emotion than a French one, while Americans can oversell. That reserve can be respect and credibility in their culture. So RAISE has local team members speak with founders in their own culture and language, and outside France likes to have a local investor on the cap table to check its biases. For founders shaped by two cultures, the test is the language they're most comfortable in.</p>
+        </div>
+        <div class="takeaway"><span class="circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p><b>Consistency above all</b>Ecosystems are small and reputation follows you. Be consistent in your process and in good professional behaviour. It's a long game: building the network takes time, so be patient.</p></div>
+      </section>
+
+      <!-- 10 Q&A -->
+      <div class="qa-wrap" id="qa">
+        <div class="qa-head">
+          <div class="kicker mono"><span>10 · Q&amp;A with the Baby VC batch #14 fellows</span><span>15 questions</span></div>
+          <h2>Questions <em>&amp; answers.</em></h2>
+        </div>
+        <div class="qa-list">
+          <article class="qa">
+            <div class="qa-top"><h3>How do you balance building chemistry with collecting the information you need on a first call?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">First call</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> Collecting as much information as possible comes first. But he sets the pace with a concise intro, invites the founder's questions about him, then goes into his questions as efficiently as possible. It takes 3–4 minutes and gives founders a lot of clarity.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>"I researched X, can you tell me how you do it differently?" Is that too generic?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">First call</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> Not at all. Showing you've looked at the space or learned from past deals scores points: "we looked at this competitor and found it tricky, what do you do differently?" You can even name the company. It shows curiosity about why they will win.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>How long is your due diligence, and how many founder calls?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Process</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> The fastest was 2 weeks; on average about 4 weeks, longer for sectors less natural to them. Calls: first call, business deep dive, tech deep dive, plus WhatsApp and short calls. As a lead or co-lead, they spend more time than a follower would.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>How do expert calls influence your judgement, especially a negative one?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">References</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> It depends on the expert's familiarity with the company and what you ask. An outsider's opinion on the technology gets a pinch of salt; their view on the problem and its size counts. Consider their bias too: corporates that are bad at innovation tend to dismiss new technology.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>What intro do you give about RAISE?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">First call</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> Much like the one he gave the fellows: the funds and tickets (€1–2M at pre-seed/seed, €3–8M at Series A), the corporate LPs (TotalEnergies, L'Oréal, Orange, Michelin…), RAISE Sherpas' entrepreneur network, then the part of the thesis or portfolio related to the company, and why he took the meeting.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>Founders pick the best valuation nine times out of ten. Do you talk about it before the term sheet?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Valuation</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> Yes, personally. Usually through ranges of dilution. Most founders won't say it directly, but some signal "we prefer you, but match the other offer." Before sending a term sheet, always leave room to keep talking: the early conversation is what matters.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>If a founder puts a valuation on the pitch deck, will you not invest?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Valuation</span><span class="chip">Red flags</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> In conversation, discussing a range is normal. On the deck, it's a bit aggressive and a red flag that they're new to fundraising. Not an automatic no, but if price is all they care about, it questions why they're building.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>Do American founders differ from European ones in process or diligence?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Culture</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> American founders are used to American VCs and capital expectations, and are sometimes less prepared, without the full data room a European founder brings. European VCs run more structured processes. Americans may be more direct and sell more vision. Founders in smaller, emerging ecosystems tend to be more sceptical of investors.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>What's RAISE's secret sauce for winning deals?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Winning</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> The corporate ecosystem; two funds from pre-seed to Series B, so they see what comes next and give better strategic advice; board seats taken but not required, as long as communication is open and regular; and partners who've lived through booms and busts. But you work with reality: he lost a deal because the founders wanted a fund able to write $5–10M cheques. Speed is the number-one advantage.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>When you moved from the US to Paris, how did you rebuild your network?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Network</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> "Very difficult." His role involved lots of partnerships with large companies, which helped, and he joined funds that already had networks to leverage: he doesn't know the CEO of Engie, but someone at RAISE does. It takes time in a new ecosystem.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>How do you keep so many relationships alive? Have you tried automating it with AI?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Network</span><span class="chip">AI</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> He has thought about it: there's a theory you can only keep about 30 close connections, and he wondered how to make it 300, but hasn't cracked it. It's about authenticity and dedicated time; coffee in person can't be automated. You build a circle of trust over time.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>How important is a personal brand?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Brand</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> It matters: senior investors often win or lose deals personally, as the person joining the board. Online, do it only if authentic; there's already a lot of VC noise. Nicolas Chow is more subtle: he posts about others' wins and things he likes. Speaking at events works well, and so do people talking about you.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>Why do you do this job?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Career</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> Building products, a mission he believed in mattered. Working with corporate innovation teams frustrated him: lots of resources, too conservative. He always got his energy from entrepreneurs and wanted to be as close to them as possible. And now is the best time to be entrepreneurial inside VC.</p>
+            <p><span class="who-tag e">Elisabetta Sakiotis</span> She joined VC right after her degree, looking for high autonomy and the freedom to explore her own path. VC teams are lean, which gives juniors more voice. She is not drawn to corporate environments.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>Do you have a hot take?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">AI</span><span class="chip">VC</span></div>
+            <p><span class="who-tag">Nicolas Chow</span> More a fear: that VC drifts towards AI and data-driven decisions, everything regressing to the average, and loses the outliers and contrarian bets that made VC work. Asking an AI gives you the average of all VC answers. Trust and human judgement remain key: use AI for research, but keep your critical thinking when deciding.</p>
+          </article>
+          <article class="qa">
+            <div class="qa-top"><h3>How do you break into VC?</h3><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+            <div class="chips"><span class="chip">Careers</span></div>
+            <p><span class="who-tag">RAISE Ventures</span> Three common doors: join a strong startup and grow there (founder associate, chief of staff) to become an operator; go deep in an industry you love to join a sector fund; or work for ecosystem players close to VCs, such as accelerators, Plug and Play or Entrepreneur First. Family offices are an under-rated entry point: many write small cheques with small teams. Once you have a foot in a fund that deploys, it's much easier to move to another.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- 11 MORE -->
+      <section class="card ink" id="more">
+        <div class="kicker mono"><span class="num">11</span><span>Keep going</span></div>
+        <h2>Want to learn more about <em>RAISE?</em></h2>
+        <p class="lede">The fund, and the earlier sessions of the bootcamp.</p>
+        <div class="links">
+          <a class="link" href="https://www.raise.co/activites/raise-ventures" target="_blank" rel="noopener"><div><b>RAISE Ventures</b><small>The venture team, funds and portfolio.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+          <a class="link" href="https://www.raise.co" target="_blank" rel="noopener"><div><b>RAISE</b><small>The group: Ventures, Impact, Sherpas and more.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+          <a class="link" href="baby-vc-14-session-5-iris.html"><div><b>Session 5 · IRIS</b><small>Growth investing &amp; due diligence with Nicolas Herschtel.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+          <a class="link" href="baby-vc-14-session-3-hexa.html"><div><b>Session 3 · Hexa</b><small>Sourcing &amp; screening with Samuel Boggio.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+          <a class="link" href="baby-vc-14-session-2-daphni.html"><div><b>Session 2 · Daphni</b><small>How to build a VC fund.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+          <a class="link" href="baby-vc-14-session-1-kima.html"><div><b>Session 1 · Kima Ventures</b><small>Inside early-stage VC.</small></div><span class="circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="foot">
+    <div class="mono"><span>Baby VC Bootcamp · Batch #14</span><span>Session 6</span></div>
+    <div class="credit">Notes by <em>Camille Le Bihan.</em></div>
+    <p>Session 6 of the Baby VC Bootcamp #14, given by Nicolas Chow (Principal) and Elisabetta Sakiotis (Senior Associate) at RAISE Ventures.</p>
+  </footer>
+
+
+
+</div>
+
+</body>
+</html>
